@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Zagreb',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'hr',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'hr',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,7 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+         Centaur\CentaurServiceProvider::class, 
         /*
          * Application Service Providers...
          */
