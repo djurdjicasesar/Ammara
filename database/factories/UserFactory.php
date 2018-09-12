@@ -21,3 +21,14 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Product::class, function (Faker $faker) {
+    return [
+        'naziv_proizvoda' => $faker->word,
+        'cijena_proizvoda' => $faker->randomFloat(2, 1, 100),
+		'opis_proizvoda' => $faker->paragraph(),
+		'sastav_proizvoda' => $faker->paragraph(),
+		'slika_proizvoda' => $faker->text(),
+	    'remember_token' => str_random(10),
+    ];
+});

@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Home page
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index')->name('index');
+
+Route::get('/products/{slug}','ProductsController@products')->name('products');
 // Authorization
 Route::get('login', 'Auth\SessionController@getLogin')->name('auth.login.form');
 Route::post('login', 'Auth\SessionController@postLogin')->name('auth.login.attempt');
@@ -44,3 +45,17 @@ Route::resource('roles', 'RoleController');
 Route::get('dashboard', function () {
     return view('Centaur::dashboard');
 })->name('dashboard');
+
+//Add Categories
+Route::match(['get','post'], 'add_category', 'CategoryController@addCategory')->name('add_category');
+Route::get('view_categories','CategoryController@viewCategories')->name('view_categories');
+
+//Products
+
+Route::match(['get','post'],'add_product','ProductsController@addProduct')->name('add_product');
+Route::get('view_products', 'ProductsController@viewProducts')->name('view_products');
+
+// Add to cart
+
+Route::match(['get','post'], '/add_cart','ProductsController@addToCart')->name('add_cart');
+Route::resource('cart', 'CartController');

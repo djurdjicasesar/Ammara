@@ -4,23 +4,23 @@
 
 @section('content')
 <div class="row">
+ 
+ 
     @if (Sentinel::check())
     <div class="jumbotron">
+
+
         <h1>Hello, {{ Sentinel::getUser()->email }}!</h1>
-        <p>You are now logged in.</p>
+        <p>Uspješno ste se prijavili.</p>
     </div>
     @else
         <div class="jumbotron">
-            <h1>Welcome, Guest!</h1>
-            <p>You must login to continue.</p>
-            <p><a class="btn btn-primary btn-lg" href="{{ route('auth.login.form') }}" role="button">Log In</a></p>
+            <h1>Dobro Došli!</h1>
+            <p>Morate se prijaviti za nastavak.</p>
+            <p><a class="btn btn-success btn-lg" href="{{ route('auth.login.form') }}" role="button">Prijavite se</a></p>
         </div>
     @endif
 
-    <?php
-        $user = Sentinel::findById(1);
-
-        // var_dump(Activation::create($user));
-    ?>
+   >
 </div>
 @stop

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="hr">
 	<head>
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h2>Welcome</h2>
+		<h2>Dobro Došli</h2>
 
-		<p><b>Account:</b> {{ $email }}</p>
-		<p>To activate your account, <a href="{{ route('auth.activation.attempt', urlencode($code)) }}">click here.</a></p>
-		<p>Or point your browser to this address: <br /> {!! route('auth.activation.attempt', urlencode($code)) !!} </p>
-		<p>Thank you!</p>
+		<p><b>Račun:</b> {{ $email }}</p>
+		<p>Za aktivaciju Vašeg računa, <a href="{{ route('auth.activation.attempt', urlencode($code)) }}">kliknite ovdje.</a></p>
+		<p>Ili u pregledniku otvorite ovu adresu: <br /> {!! route('auth.activation.attempt', urlencode($code)) !!} </p>
+		<p>Hvala Vam!</p>
 	</body>
 </html>
